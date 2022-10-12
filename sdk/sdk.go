@@ -88,7 +88,7 @@ func Initialize(serviceName string, apiToken string, attrs ...attribute.KeyValue
 		urlPath := otlptracehttp.WithURLPath(heliosConfig.collectorPath)
 		headers := otlptracehttp.WithHeaders(map[string]string{"Authorization": heliosConfig.apiToken})
 		var error error
-		exporter, error = otlptrace.New(context.Background(), otlptracehttp.NewClient(endpoint, headers, urlPath))
+		exporter, error = otlptrace.New(context.Background(), otlptracehttp.NewClient(endpoint, headers, urlPath, otlptracehttp.WithInsecure))
 		if error != nil {
 			return nil, error
 		}

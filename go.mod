@@ -1,4 +1,4 @@
-module github.com/helios/go-sdk
+module github.com/omriza/go-sdk
 
 go 1.18
 
